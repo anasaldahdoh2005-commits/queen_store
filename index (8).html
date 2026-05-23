@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Queen Store — عيد أضحى مبارك</title>
+  <link rel="stylesheet" href="css/style (9).css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <canvas id="particles-canvas"></canvas>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="ambient-blob blob-1"></div>
+  <div class="ambient-blob blob-2"></div>
+  <div class="ambient-blob blob-3"></div>
+
+  <main class="page-wrapper">
+
+    <header class="site-header">
+      <div class="logo-wrapper">
+        <div class="logo-crown">♛</div>
+        <div class="logo-text">
+          <span class="logo-en">Queen Store</span>
+          <span class="logo-ar">كوين ستور</span>
+        </div>
+      </div>
+      <div class="crescent-wrapper" aria-hidden="true">
+        <div class="crescent"></div>
+        <div class="star star-1">✦</div>
+        <div class="star star-2">✦</div>
+        <div class="star star-3">✦</div>
+      </div>
+    </header>
+
+    <section class="hero-section">
+
+      <div class="lantern lantern-left" aria-hidden="true">
+        <div class="lantern-body"><div class="lantern-glow"></div></div>
+        <div class="lantern-string"></div>
+        <div class="lantern-tassel"></div>
+      </div>
+      <div class="lantern lantern-right" aria-hidden="true">
+        <div class="lantern-body"><div class="lantern-glow"></div></div>
+        <div class="lantern-string"></div>
+        <div class="lantern-tassel"></div>
+      </div>
+
+      <div class="hero-card">
+        <div class="card-border-glow"></div>
+
+        <div class="eid-badge">
+          <span>✦</span><span>عرض محدود</span><span>✦</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="title-line-1">عيد أضحى</span>
+          <span class="title-line-2">مبارك</span>
+        </h1>
+
+        <div class="divider-ornament">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond">◆</span>
+          <span class="ornament-line"></span>
+        </div>
+
+        <p class="hero-subtitle">
+  بمناسبة عيد الأضحى المبارك،<br />
+  نُهديكم هدية حصرية من <strong>كوين ستور</strong><br />
+  أول <strong class="highlight-30">30 زيارة</strong> فقط تحصل على كود خصم خاص
+  <strong class="discount">10%</strong>
+</p>
+
+        <!-- Counter -->
+        <div class="coupon-counter" id="coupon-counter">
+          <div class="counter-inner">
+            <span class="counter-label">الكوبونات المتبقية</span>
+            <span class="counter-number" id="remaining-count">
+              <span class="loading-dots">...</span>
+            </span>
+            <div class="counter-bar-wrapper">
+              <div class="counter-bar" id="counter-bar" style="width:100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <button class="cta-btn" id="claim-btn" onclick="claimCoupon()" disabled>
+          <span class="btn-shimmer"></span>
+          <span class="btn-icon">🎁</span>
+          <span class="btn-text" id="btn-text">جارٍ التحميل...</span>
+        </button>
+
+        <!-- Coupon Box -->
+        <div class="coupon-box" id="coupon-box" style="display:none;">
+          <div class="coupon-box-inner">
+            <div class="coupon-top">
+              <span class="coupon-label">كود الخصم الخاص بك</span>
+              <span class="coupon-expiry">✦ عيد أضحى ١٤٤٦ ✦</span>
+            </div>
+            <div class="coupon-code-display" id="coupon-code-display">QUEEN-XXXX</div>
+            <div class="coupon-dashes"></div>
+            <div class="coupon-bottom">
+              <span class="coupon-note">احتفظ بهذا الكود واستخدمه عند الشراء</span>
+              <button class="copy-btn" onclick="copyCoupon()">
+                <span id="copy-text">📋 نسخ الكود</span>
+              </button>
+            </div>
+          </div>
+          <div class="coupon-dots coupon-dots-right"></div>
+          <div class="coupon-dots coupon-dots-left"></div>
+        </div>
+
+        <!-- Message -->
+        <div class="message-area" id="message-area" style="display:none;"></div>
+
+      </div>
+    </section>
+
+    <section class="info-strip">
+      <div class="info-item">
+        <span class="info-icon">📍</span>
+        <span class="info-text">غزة — الرمال — شارع خالد بن الوليد</span>
+      </div>
+      <div class="info-divider">◆</div>
+      <div class="info-item">
+        <span class="info-icon">📸</span>
+        <a href="https://instagram.com/queen_store_gazaa" target="_blank" class="info-link">@queen_store_gazaa</a>
+      </div>
+    </section>
+  <audio id="eidAudio" preload="auto">
+    <source src="images/eid.mp3" type="audio/mpeg">
+  </audio>
+    <footer class="site-footer">
+      <p>كوين ستور © 2026 &nbsp;✦&nbsp; كل عام وأنتم بخير</p>
+      <p>تصميم وبرمجة  :  &nbsp;✦&nbsp; أنس محمد الدحدوح </p>
+    </footer>
+
+  </main>
+
+  <!-- Firebase SDK -->
+  <script type="module" src="js/script (4).js"></script>
+</body>
+</html>
